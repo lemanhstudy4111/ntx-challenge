@@ -106,19 +106,19 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$
 ;
 async function Page() {
     try {
+        let todos = [];
         const data = await fetch("https://jsonplaceholder.typicode.com/todos").then((returnData)=>returnData.json()).catch((err)=>{
             throw new Error(err);
         });
-        let dataRandom3 = [];
         if (data) {
             const random3 = [];
             for(let i = 0; i < 3; i++){
                 random3.push(Math.floor(Math.random() * (data.length - 1)));
             }
-            dataRandom3 = random3.map((num)=>data[num]);
+            todos = random3.map((num)=>data[num]);
         }
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "flex flex-col justify-between gap-16",
+            className: "flex flex-col justify-between gap-10",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                     className: "sticky m-5",
@@ -153,7 +153,7 @@ async function Page() {
                     columnNumber: 5
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$components$2f$TodoList$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                    tasks: dataRandom3
+                    tasks: todos
                 }, void 0, false, {
                     fileName: "[project]/src/app/todo/page.tsx",
                     lineNumber: 28,
